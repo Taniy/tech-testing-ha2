@@ -1,6 +1,6 @@
 __author__ = 'tan'
 
-from tests.helpers.helper import Page, Component
+from tests.helpers.page_component import Page, Component
 from selenium.webdriver.support.ui import WebDriverWait
 
 

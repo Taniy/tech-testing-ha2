@@ -50,36 +50,31 @@ class ExampleTest(unittest.TestCase):
         create_page.advertise_campany.set_advertise_item()
 
         create_page.create_advertise.set_reference(REF)
-        utils.wait_for_ajax_complete_ref(self.driver)
+        utils.wait_load_ref(self.driver)
         create_page.create_advertise.set_title(TITLE)
         create_page.create_advertise.set_text(TEXT)
         create_page.create_advertise.set_small_image(SMALL_IMAGE)
         create_page.create_advertise.set_big_image(BIG_IMAGE)
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
         create_page.create_advertise.submit()
 
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
         create_page.settings_level.click_level()
         create_page.settings_level.set_average_level()
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
         create_page.create_campany.submit()
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
 
         campany_page = CampanyPage(self.driver)
         campany_page.open()
-
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
         campany_page.checking.edit()
 
         edit_page = EditPage(self.driver)
         edit_page.check_level.wait_for_edit_page_load()
-        utils.wait_for_ajax_complete(self.driver)
-
+        utils.wait_loading(self.driver)
         edit_page.check_level.click_level()
-        utils.wait_for_ajax_complete(self.driver)
-
         check_average = edit_page.check_level.average()
-        check_low_high = edit_page.check_level.low_high()
 
         self.assertTrue(check_average)
 
@@ -93,34 +88,33 @@ class ExampleTest(unittest.TestCase):
         create_page.advertise_campany.set_advertise_item()
 
         create_page.create_advertise.set_reference(REF)
-        utils.wait_for_ajax_complete_ref(self.driver)
+        utils.wait_load_ref(self.driver)
         create_page.create_advertise.set_title(TITLE)
         create_page.create_advertise.set_text(TEXT)
         create_page.create_advertise.set_small_image(SMALL_IMAGE)
         create_page.create_advertise.set_big_image(BIG_IMAGE)
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
         create_page.create_advertise.submit()
 
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
         create_page.settings_level.click_level()
         create_page.settings_level.set_low_high_level()
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
         create_page.create_campany.submit()
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
 
         campany_page = CampanyPage(self.driver)
         campany_page.open()
 
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
         campany_page.checking.edit()
 
         edit_page = EditPage(self.driver)
         edit_page.check_level.wait_for_edit_page_load()
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
         edit_page.check_level.click_level()
-        utils.wait_for_ajax_complete(self.driver)
         check_low_high = edit_page.check_level.low_high()
-        check_average = edit_page.check_level.average()
+
         self.assertTrue(check_low_high)
 
     def test_all_ussr(self):
@@ -133,32 +127,31 @@ class ExampleTest(unittest.TestCase):
         create_page.advertise_campany.set_advertise_item()
 
         create_page.create_advertise.set_reference(REF)
-        utils.wait_for_ajax_complete_ref(self.driver)
+        utils.wait_load_ref(self.driver)
         create_page.create_advertise.set_title(TITLE)
         create_page.create_advertise.set_text(TEXT)
         create_page.create_advertise.set_small_image(SMALL_IMAGE)
         create_page.create_advertise.set_big_image(BIG_IMAGE)
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
         create_page.create_advertise.submit()
 
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
         create_page.settings_country.set_all_ussr()
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
         create_page.create_campany.submit()
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
 
         campany_page = CampanyPage(self.driver)
         campany_page.open()
 
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
         campany_page.checking.edit()
 
         edit_page = EditPage(self.driver)
         edit_page.check_level.wait_for_edit_page_load()
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
         ussr_select = edit_page.check_country.all_ussr_checked()
         edit_page.check_country.click_countries()
-        utils.wait_for_ajax_complete(self.driver)
         other_countries_in_ussr = edit_page.check_country.some_countries_checked()
         self.assertTrue(ussr_select)
         self.assertTrue(other_countries_in_ussr)
@@ -173,43 +166,40 @@ class ExampleTest(unittest.TestCase):
         create_page.advertise_campany.set_advertise_item()
 
         create_page.create_advertise.set_reference(REF)
-        utils.wait_for_ajax_complete_ref(self.driver)
+        utils.wait_load_ref(self.driver)
         create_page.create_advertise.set_title(TITLE)
         create_page.create_advertise.set_text(TEXT)
         create_page.create_advertise.set_small_image(SMALL_IMAGE)
         create_page.create_advertise.set_big_image(BIG_IMAGE)
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
         create_page.create_advertise.submit()
 
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
         create_page.settings_country.open_ussr()
-        utils.wait_for_ajax_complete(self.driver)
         create_page.settings_country.set_child_country()
+        utils.wait_loading(self.driver)
         create_page.create_campany.submit()
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
 
         campany_page = CampanyPage(self.driver)
         campany_page.checking.wait_for_edit_page_load()
 
         campany_page.open()
 
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
         campany_page.checking.edit()
 
         edit_page = EditPage(self.driver)
         edit_page.check_level.wait_for_edit_page_load()
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
         edit_page.check_country.click_countries()
-        utils.wait_for_ajax_complete(self.driver)
         ussr_child_check = edit_page.check_country.child_child_checked()
-
         other_countries_in_ussr = edit_page.check_country.some_countries_checked()
 
         self.assertTrue(ussr_child_check)
         self.assertFalse(other_countries_in_ussr)
 
     def test_click_some_countries(self):
-        '''
         create_page = CreatePage(self.driver)
         create_page.open()
         create_page.top_menu.get_email()
@@ -218,36 +208,34 @@ class ExampleTest(unittest.TestCase):
         create_page.advertise_campany.set_advertise_item()
 
         create_page.create_advertise.set_reference(REF)
-        utils.wait_for_ajax_complete_ref(self.driver)
+        utils.wait_load_ref(self.driver)
         create_page.create_advertise.set_title(TITLE)
         create_page.create_advertise.set_text(TEXT)
         create_page.create_advertise.set_small_image(SMALL_IMAGE)
         create_page.create_advertise.set_big_image(BIG_IMAGE)
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
         create_page.create_advertise.submit()
 
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
         create_page.settings_country.open_ussr()
-        utils.wait_for_ajax_complete(self.driver)
         create_page.settings_country.set_some_countries()
+        utils.wait_loading(self.driver)
         create_page.create_campany.submit()
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
 
         campany_page = CampanyPage(self.driver)
+        campany_page.checking.wait_for_edit_page_load()
         campany_page.open()
 
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
         campany_page.checking.edit()
 
         edit_page = EditPage(self.driver)
         edit_page.check_level.wait_for_edit_page_load()
-        utils.wait_for_ajax_complete(self.driver)
+        utils.wait_loading(self.driver)
         edit_page.check_country.click_countries()
-        utils.wait_for_ajax_complete(self.driver)
         some_countries_check = edit_page.check_country.some_countries_checked()
         ussr_child_check = edit_page.check_country.child_child_checked()
 
         self.assertTrue(some_countries_check)
         self.assertFalse(ussr_child_check)
-        '''
-        pass

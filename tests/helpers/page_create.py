@@ -1,6 +1,6 @@
 __author__ = 'tan'
 
-from tests.helpers.helper import Page, Component
+from tests.helpers.page_component import Page, Component
 from selenium.webdriver.support.ui import WebDriverWait
 
 
@@ -133,6 +133,7 @@ class SettingsCountry(Component):
                 lambda d: d.find_element_by_css_selector(self.COUNTRY[i])
             )
             element.click()
+
 
 class CreateAdvertise(Component):
     REF = 'input[data-name="url"]'

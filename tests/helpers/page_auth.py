@@ -3,7 +3,7 @@ import urlparse
 __author__ = 'tan'
 
 from selenium.webdriver.support.ui import Select
-from tests.helpers.helper import Page, Component
+from tests.helpers.page_component import Page, Component
 
 
 class AuthPage(Page):
